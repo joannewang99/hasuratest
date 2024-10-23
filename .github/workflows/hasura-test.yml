@@ -36,7 +36,7 @@ jobs:
       - uses: c-hive/gha-yarn-cache@v2
 
       - name: Hasura CI/CD
-        uses: joannewang99/hasura-runner@master
+        uses: joannewang99/hasuratest@master
         with:
           args: metadata apply
         env:
@@ -46,7 +46,7 @@ jobs:
           HASURA_ADMIN_SECRET: admin_secret
 
       - name: Hasura CI/CD
-        uses: joannewang99/hasura-runner@master
+        uses: joannewang99/hasuratest@master
         with:
           args: migrate apply --database-name default
         env:
@@ -56,7 +56,7 @@ jobs:
           HASURA_ADMIN_SECRET: admin_secret
 
       - name: Hasura CI/CD
-        uses: joannewang99/hasura-runner@master
+        uses: joannewang99/hasuratest@master
         with:
           args: metadata reload
         env:
@@ -66,7 +66,7 @@ jobs:
           HASURA_ADMIN_SECRET: admin_secret
 
       - name: Hasura CI/CD
-        uses: joannewang99/hasura-runner@master
+        uses: joannewang99/hasuratest@master
         with:
           args: seeds apply --database-name default
         env:
